@@ -24,7 +24,7 @@ function About() {
         </Row>
         <Row>
           <Col size="md-12">
-            <p>Intergalactic Human Resources is the best search engine of employee profiles within the Intergalactic Realms. May your journey for the best employee begin!
+            <p className="mt-4">Intergalactic Human Resources is the best search engine of employee profiles within the Intergalactic Realms. May your journey to find the best employee begin!
             </p>
           </Col>
         </Row>
