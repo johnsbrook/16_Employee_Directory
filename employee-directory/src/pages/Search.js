@@ -7,35 +7,53 @@ import Alert from "../components/Alert";
 
 class Search extends Component {
   state = {
-    search: "",
-    breeds: [],
-    results: [],
-    error: ""
+    // search: "",
+    // employees: [],
+    // results: [],
+    // error: ""
+    users: [],
+    store: []
   };
 
-  // When the component mounts, get a list of all available base breeds and update this.state.breeds
+  // When the component mounts, get a list of all available base employees and update this.state.employees
   componentDidMount() {
-    API.getBaseBreedsList()
-      .then(res => this.setState({ breeds: [res.data.message] }))
-      .catch(err => console.log(err));
+    API.getBaseEmployeesList()
+        .then(json => console.log(json))
+        .then(json => json.data.results.map(result => ({
+          name: `${result.name.title} ${result.name.first} ${result.name.last}`,
+          id: result.registered
+        })))
+        .then(newData => this.setState({
+          users: newData,
+          store: newData
+        }))
+      // .then(res => this.setState({ employees: res.data.message }))
+        .catch(err => console.log(err));
   }
 
-  handleInputChange = event => {
-    this.setState({ search: event.target.value });
-  };
+  filterNames(event){
+    this.setState({
+      users: this.state.store.filter(
+        item => item.name.toLowerCase().includes(event.target.value.toLowerCase())
+      )})
+  }
 
-  handleFormSubmit = event => {
-    event.preventDefault();
-    API.getDogsOfBreed(this.state.search)
-      .then(res => {
-        if (res.data.status === "error") {
-          throw new Error(res.data.message);
+//   handleInputChange = event => {
+//     this.setState({ search: event.target.value });
+//   };
+
+//   handleFormSubmit = event => {
+//     event.preventDefault();
+//     API.getEmployeessOfEmployee(this.state.search)
+//       .then(res => {
+//         if (res.data.status === "error") {
+//           throw new Error(res.data.message);
           
-        }
-        this.setState({ results: res.data.message, error: "" });
-      })
-      .catch(err => this.setState({ error: err.message }));
-  };
+//         }
+//         this.setState({ results: res.data.message, error: "" });
+//       })
+//       .catch(err => this.setState({ error: err.message }));
+//   };
   render() {
     return (
       <div>
@@ -50,7 +68,7 @@ class Search extends Component {
           <SearchForm
             handleFormSubmit={this.handleFormSubmit}
             handleInputChange={this.handleInputChange}
-            breeds={this.state.breeds}
+            employees={this.state.employees}
           />
           <SearchResults results={this.state.results} />
         </Container>

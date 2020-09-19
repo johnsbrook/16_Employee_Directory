@@ -8,10 +8,11 @@ export default {
   //   return axios.get("https://dog.ceo/api/breeds/image/random");
   // },
   getDogsOfBreed: function(breed) {
-    return axios.get("https://dog.ceo/api/breed/" + breed + "/images");
+    return axios.get("https://randomuser.me/api/?results=5&nat=" + breed );
   },
-  getBaseBreedsList: function() {
-    return axios.get("https://dog.ceo/api/breeds/list");
+  getBaseEmployeesList: function() {
+    return axios.get('https://randomuser.me/api/?results=10&inc=name,registered,picture&nat=us')
+    // return axios.get("https://dog.ceo/api/breeds/list");
     // return axios.get("https://randomuser.me/api/?nat=")
   }
 };
