@@ -19,7 +19,7 @@ function About() {
               Intergalactic Human Resources!</h1>
           </Col>
           <Col size="md-4">
-            <h5 className="mt-4">"The Best Employee Profile Search Engine" - <i>Galaxies Herald</i></h5>
+            <h5 className="mt-4">"The Best Employee Search Engine" - <i>Galaxies Herald</i></h5>
           </Col>
         </Row>
         <Row>
