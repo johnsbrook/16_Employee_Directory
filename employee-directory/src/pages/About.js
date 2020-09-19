@@ -13,10 +13,13 @@ function About() {
       </Hero>
       <Container style={{ marginTop: 30 }}>
         <Row>
-          <Col size="md-12">
+          <Col size="md-8">
             <h1>Welcome To 
               <br></br>
               Intergalactic Human Resources!</h1>
+          </Col>
+          <Col size="md-4">
+            <h5 className="mt-4">"The Best Employee Profile Search Engine" - <i>Galaxies Herald</i></h5>
           </Col>
         </Row>
         <Row>
