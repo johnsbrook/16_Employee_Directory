@@ -23,7 +23,9 @@
 
 .hero h1, .hero h2 {
   color: white;
+  text-shadow: -3px 1px darkslategray;
 }
+
 
 .hero h1 {
   font-size: 60px;

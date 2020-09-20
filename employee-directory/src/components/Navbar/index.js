@@ -7,7 +7,7 @@ function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark shadow">
       <Link className="navbar-brand" to="/">
-        Intergalacic Human Resources Directory
+        Directory
       </Link>
       <div>
         <ul className="navbar-nav">
@@ -28,7 +28,7 @@ function Navbar() {
               to="/search"
               className={window.location.pathname === "/search" ? "nav-link active" : "nav-link"}
             >
-              Search
+              Search Intergalacic Team Members
             </Link>
           </li>
         </ul>
