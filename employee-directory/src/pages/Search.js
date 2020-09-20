@@ -17,7 +17,7 @@ class Search extends Component {
   // When the component mounts, get a list of all available base breeds and update this.state.breeds
   // List of countries populated directly from website due to random list excepting some records.
   // componentDidMount() {
-  //   // API.getBaseBreedsList()
+  //   // API.getEmployeeListByNat()
   //   //   .then(res => this.setState({ breeds: res.data.results.nat }))
   //   //   .then(res => console.log(res.data.results.nat))
   //   //   .catch(err => console.log(err));
@@ -78,9 +78,7 @@ class Search extends Component {
     
   }
  
-  // galaxyTeam = event => {
-  //   console.log("Final state: ",this.state.galaxy)
-  // }
+  
 
   handleFormSubmit = event => {
     
