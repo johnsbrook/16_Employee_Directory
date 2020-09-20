@@ -14,17 +14,33 @@ class Search extends Component {
   };
 
   // When the component mounts, get a list of all available base breeds and update this.state.breeds
-  componentDidMount() {
-    // API.getBaseBreedsList()
-    //   .then(res => this.setState({ breeds: res.data.results.nat }))
-    //   .then(res => console.log(res.data.results.nat))
-    //   .catch(err => console.log(err));
-  }
+  // List of countries populated directly from website due to random list excepting some records.
+  
+  // componentDidMount() {
+  //   // API.getBaseBreedsList()
+  //   //   .then(res => this.setState({ breeds: res.data.results.nat }))
+  //   //   .then(res => console.log(res.data.results.nat))
+  //   //   .catch(err => console.log(err));
+  // }
 
   handleInputChange = event => {
     this.setState({ search: event.target.value })
     
   };
+
+  handleSort = event => {
+
+    event.preventDefault();
+   let sortedResult =  this.state.result.sort(function(a, b){
+      if(a.name.first < b.name.first) { return -1; }
+      if(a.name.first >  b.name.firs) { return 1; }
+      return 0;
+  })
+
+
+  this.setState({result: sortedResult})
+
+  }
 
   handleFormSubmit = event => {
     
@@ -56,6 +72,7 @@ class Search extends Component {
           <SearchForm
             handleFormSubmit={this.handleFormSubmit}
             handleInputChange={this.handleInputChange}
+            handleSort = {this.handleSort}
             breeds={this.state.breeds}
           />
           <SearchResults result={this.state.result} />

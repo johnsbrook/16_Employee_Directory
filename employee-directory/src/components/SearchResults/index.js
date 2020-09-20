@@ -10,11 +10,12 @@ function SearchResults(props) {
 
         // <li key={result} className="list-group-item m-2">
           <div className="m-2 p-1 row">
-            <div className="col-2">
-          <img alt="Person" src={result.picture.large} className="img-fluid" />
+            <div className="col-sm-2">
+              
+              <img alt="Person" src={result.picture.large} className="img-fluid" />
           </div>
-            <div className="col-10">
-              This is the employee description.
+            <div className="col-sm-10">
+              <h5 class="eh5ployeeName">{result.name.first} {result.name.last}</h5>
             </div>
           </div>
         // </li>

@@ -31,6 +31,9 @@ function SearchForm(props) {
         <button type="submit" onClick={props.handleFormSubmit} className="btn btn-dark mt-2">
           Let the Journey Begin
         </button>
+        <button type="submit" onClick={props.handleSort} className="btn btn-dark mt-2">
+          Organize Your Galaxy Members Alphabetically
+        </button>
       </div>
     </form>
   );
