@@ -52,7 +52,11 @@ function SearchResults(props) {
                        <div className="col-4 text-left">
                        e-Mail
                       </div>
-                      <div className="col-8 text-left">{result.email}</div>
+                      <div className="col-8 text-left">
+
+<a href={"mailto:" + result.email}>{result.email}</a>
+
+                      </div>
                   </div>
                   <div className="row">
                       <div className="col-4 text-left">
