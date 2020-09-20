@@ -8,7 +8,7 @@ ul.search-results img {
 
 .galaxyfont{
   font-family: 'Staatliches', cursive;
-  font-size: 130px;
+  font-size: 5em;
   text-shadow: -5px 0px crimson;
 }
 
@@ -16,9 +16,12 @@ ul.search-results img {
   font-size: larger;
   font-weight: bold;
   font-family: 'Jura', sans-serif;
-
 }
 
 .profile {
   border-radius: 10px;
+}
+
+.details {
+  font-size: .8em;
 }

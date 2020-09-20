@@ -105,7 +105,7 @@ class Search extends Component {
     return (
       <div>
         <Container style={{ minHeight: "80%", backgroundColor: "black", color: "white" }}>
-          <h1 className="text-center pt-5">Search Your Intergalactic Team</h1>
+          <h1 className="text-center pt-5">Search Intergalactic Team</h1>
           <Alert
             type="danger"
             style={{ opacity: this.state.error ? 1 : 0, marginBottom: 10 }}

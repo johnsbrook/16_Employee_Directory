@@ -7,7 +7,7 @@ export default {
     return axios.get("https://dog.ceo/api/breeds/image/random");
   },
   getEmployeesByTeam: function(nat) {
-    return axios.get("https://randomuser.me/api/?results=5&nat=" + nat)
+    return axios.get("https://randomuser.me/api/?results=25&nat=" + nat)
   },
   getBaseBreedsList: function() {
         return axios.get("https://randomuser.me/api/?results=20&inc=nat");
