@@ -6,8 +6,8 @@ function SearchForm(props) {
   return (
     <form className="searchForm text-center">
       <div className="form-group">
-        <label htmlFor="searchTeam"><b>Filter Members by Intergalactic Team</b></label>
-        <input value={props.search} onChange={props.handleInputChange} name="nat" type="text" list="galaxies" id="nat" className="searchTeam form-control" placeholder="Search Team By Galaxy..." />
+        <label htmlFor="searchTeam"><b>Filter Members by Galactic Team</b></label>
+        <input value={props.search} onChange={props.handleInputChange} name="nat" type="text" list="galaxies" id="nat" className="searchTeam form-control" placeholder="Select Galaxy to Filter..." />
         <datalist id="galaxies">         
           <option value="AU" key="AU">Andromeda</option>
           <option value="BR" key="BR">Black Eye</option>
@@ -30,7 +30,7 @@ function SearchForm(props) {
 
         {/* Filter the users by at least one property. (by Galaxy Name) */}
         <button type="submit" onClick={props.handleFormSubmit} className="btn btn-dark mt-2 mx-auto">
-          Let the Journey Begin
+          Meet Galactic Journey Members
         </button>
 
         {/* Sort the table by at least one category (alphabetically) */}
