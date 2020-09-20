@@ -6,13 +6,36 @@ export default {
   getRandomDog: function() {
     return axios.get("https://dog.ceo/api/breeds/image/random");
   },
-  getDogsOfBreed: function(nat) {
-    
-    return axios.get("https://randomuser.me/api/?results=20&?nat=" + nat).
-    then(res => 
-    console.log("https://randomuser.me/api/?results=20&?nat=" + nat))
+  getEmployeesByTeam: function(nat) {
+    return axios.get("https://randomuser.me/api/?results=20&nat=" + nat)
   },
   getBaseBreedsList: function() {
-    return axios.get("https://randomuser.me/api/?results=20&inc=name,registered,picture,location,email,cell,phone");
+        return axios.get("https://randomuser.me/api/?results=20&inc=nat");
   }
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// export default {
+//   getRandomDog: function() {
+//     return axios.get("https://dog.ceo/api/breeds/image/random");
+//   },
+//   getDogsOfBreed: function(breed) {
+//     return axios.get("https://dog.ceo/api/breed/" + breed + "/images");
+//   },
+//   getBaseBreedsList: function() {
+//     return axios.get("https://dog.ceo/api/breeds/list");
+//   }
+// };

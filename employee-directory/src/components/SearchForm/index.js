@@ -9,6 +9,7 @@ function SearchForm(props) {
         <label htmlFor="searchTeam"><b>Search</b></label>
         <input value={props.search} onChange={props.handleInputChange} name="nat" type="text" list="countries" id="nat" className="searchTeam form-control" placeholder="Search Your Intergalactic Team..." />
         <datalist id="countries">
+         
               <option value="AU" key="AU">Australia</option>
               <option value="BR" key="BR">Brazil</option>
               <option value="CA" key="CA">Canada</option>

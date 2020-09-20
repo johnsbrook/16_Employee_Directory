@@ -9,35 +9,39 @@ class Search extends Component {
   state = {
     search: "",
     breeds: [],
-    results: [],
+    result: [],
     error: ""
   };
 
   // When the component mounts, get a list of all available base breeds and update this.state.breeds
   componentDidMount() {
-    API.getBaseBreedsList()
-      .then(res => this.setState({ breeds: res.data.message }))
-      .catch(err => console.log(err));
+    // API.getBaseBreedsList()
+    //   .then(res => this.setState({ breeds: res.data.results.nat }))
+    //   .then(res => console.log(res.data.results.nat))
+    //   .catch(err => console.log(err));
   }
 
   handleInputChange = event => {
     this.setState({ search: event.target.value })
-  };
-
-  handleFormSubmit = event => {
-    event.preventDefault();
-    API.getDogsOfBreed(this.state.search)
-        .then(res => {
-          if (res.data.status === "error") {
-            throw new Error(res.data.message);
-          }
-          this.setState({ results: res.data.results})
-        })
-        .catch(err => this.setState({ error: err.message }));
-
     
   };
 
+  handleFormSubmit = event => {
+    
+    event.preventDefault();
+    console.log(this.state.search)
+    API.getEmployeesByTeam(this.state.search)
+        .then(res => {
+          if (res.data.status === "error") {
+            throw new Error(res.data.results);
+          }
+          this.setState({ result: res.data.results, error: "" });
+        })
+        .then(res => console.log(this.state.search))
+        .catch(err => this.setState({ error: err.result }));
+        
+  };
+  
   render() {
     return (
       <div>
@@ -54,7 +58,7 @@ class Search extends Component {
             handleInputChange={this.handleInputChange}
             breeds={this.state.breeds}
           />
-          <SearchResults results={this.state.results} />
+          <SearchResults result={this.state.result} />
         </Container>
       </div>
     );
