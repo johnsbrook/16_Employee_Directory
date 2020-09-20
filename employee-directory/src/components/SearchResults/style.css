@@ -1,3 +1,18 @@
 ul.search-results img {
   margin: 0 auto;
 }
+
+.red {
+  background-color: red;
+}
+
+.galaxyfont{
+  font-family: 'Staatliches', cursive;
+  font-size: 130px;
+  text-shadow: -5px 0px crimson;
+}
+
+.employeeName {
+  font-size: larger;
+  font-weight: bold;
+}
