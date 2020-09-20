@@ -10,12 +10,12 @@ class Search extends Component {
     search: "",
     breeds: [],
     result: [],
-    error: ""
+    error: "",
+    galaxy: ""
   };
 
   // When the component mounts, get a list of all available base breeds and update this.state.breeds
   // List of countries populated directly from website due to random list excepting some records.
-  
   // componentDidMount() {
   //   // API.getBaseBreedsList()
   //   //   .then(res => this.setState({ breeds: res.data.results.nat }))
@@ -31,16 +31,56 @@ class Search extends Component {
   handleSort = event => {
 
     event.preventDefault();
-   let sortedResult =  this.state.result.sort(function(a, b){
-      if(a.name.first < b.name.first) { return -1; }
-      if(a.name.first >  b.name.firs) { return 1; }
-      return 0;
-  })
-
-
-  this.setState({result: sortedResult})
-
+    let sortedResult =  this.state.result.sort(function(a, b){
+        if(a.name.first < b.name.first) { return -1; }
+        if(a.name.first >  b.name.firs) { return 1; }
+        return 0;    
+      });
+          this.setState({result: sortedResult})
   }
+
+  showGalaxy = event => {
+      let galaxyTeam = this.state.galaxy;
+      if(galaxyTeam === "AU") { galaxyTeam = "Andromeda"; this.setState({ galaxy: galaxyTeam}); };
+      // this.galaxyTeam(); };
+      if(galaxyTeam === "BR") { galaxyTeam = "Black Eye"; this.setState({ galaxy: galaxyTeam}); };
+      // this.galaxyTeam(); };
+      if(galaxyTeam === "CA") { galaxyTeam = "Cartwheel"; this.setState({ galaxy: galaxyTeam}); };
+      // this.galaxyTeam(); };
+      if(galaxyTeam === "CH") { galaxyTeam = "Cosmos"; this.setState({ galaxy: galaxyTeam}); };
+      // this.galaxyTeam(); };
+      if(galaxyTeam === "DE") { galaxyTeam = "Eye of Sauron"; this.setState({ galaxy: galaxyTeam}); };
+      // this.galaxyTeam(); };
+      if(galaxyTeam === "DK") { galaxyTeam = "Fireworks"; this.setState({ galaxy: galaxyTeam}); };
+      // this.galaxyTeam(); };
+      if(galaxyTeam === "ES") { galaxyTeam = "Hockey Stick"; this.setState({ galaxy: galaxyTeam}); };
+      // this.galaxyTeam(); };
+      if(galaxyTeam === "FI") { galaxyTeam = "Large Magellanic"; this.setState({ galaxy: galaxyTeam}); };
+      // this.galaxyTeam(); };
+      if(galaxyTeam === "FR") { galaxyTeam = "Large Sombrero"; this.setState({ galaxy: galaxyTeam}); };
+      // this.galaxyTeam(); };
+      if(galaxyTeam === "GB") { galaxyTeam = "Medusa Merger"; this.setState({ galaxy: galaxyTeam}); };
+      // this.galaxyTeam(); };
+      if(galaxyTeam === "IR") { galaxyTeam = "Milky Way"; this.setState({ galaxy: galaxyTeam}); };
+      // this.galaxyTeam(); };
+      if(galaxyTeam === "IE") { galaxyTeam = "Pinwheel"; this.setState({ galaxy: galaxyTeam}); };
+      // this.galaxyTeam(); };
+      if(galaxyTeam === "NO") { galaxyTeam = "Sculptor"; this.setState({ galaxy: galaxyTeam}); };
+      // this.galaxyTeam(); };
+      if(galaxyTeam === "NL") { galaxyTeam = "Southern Pinwheel"; this.setState({ galaxy: galaxyTeam}); };
+      // this.galaxyTeam(); };
+      if(galaxyTeam === "NZ") { galaxyTeam = "Triangulum"; this.setState({ galaxy: galaxyTeam}); };
+      // this.galaxyTeam(); };
+      if(galaxyTeam === "TR") { galaxyTeam = "Whirlpool"; this.setState({ galaxy: galaxyTeam}); };
+      // this.galaxyTeam(); };
+      if(galaxyTeam === "US") { galaxyTeam = "Wolf-Lundmark-Melotte"; this.setState({ galaxy: galaxyTeam}); };
+      // this.galaxyTeam(); };
+    
+  }
+ 
+  // galaxyTeam = event => {
+  //   console.log("Final state: ",this.state.galaxy)
+  // }
 
   handleFormSubmit = event => {
     
@@ -54,6 +94,9 @@ class Search extends Component {
           this.setState({ result: res.data.results, error: "" });
         })
         .then(res => console.log(this.state.search))
+        .then(this.setState({ galaxy: this.state.search }))
+        .then(res => console.log("Galaxy State", this.state.galaxy ))
+        .then(res => this.showGalaxy())
         .catch(err => this.setState({ error: err.result }));
         
   };
@@ -75,7 +118,10 @@ class Search extends Component {
             handleSort = {this.handleSort}
             breeds={this.state.breeds}
           />
-          <SearchResults result={this.state.result} />
+          <SearchResults 
+            result={this.state.result}
+            galaxy={this.state.galaxy}
+          />
         </Container>
       </div>
     );
