@@ -15,4 +15,10 @@ ul.search-results img {
 .employeeName {
   font-size: larger;
   font-weight: bold;
+  font-family: 'Jura', sans-serif;
+
+}
+
+.profile {
+  border-radius: 10px;
 }

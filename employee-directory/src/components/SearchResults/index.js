@@ -11,7 +11,7 @@ function SearchResults(props) {
   return (
 
   // Main div
-  <div className="">
+  <div className="container">
 
       {/* Galaxy Team */}
       <div className="row">
@@ -20,26 +20,30 @@ function SearchResults(props) {
         </div>        
       </div>
       
-      {props.result.map(result => (
+      
 
-        <div>
-          {/* Location of image */}
-          <div className="m-2 p-1 row ">
-            <div className="col-sm-12">
-              <img alt="Person" src={result.picture.large} className="img-fluid" />
+        <div className="col-sm-12" style={{color: "black"}}>
+        {props.result.map(result => (
+          <div className="col-sm-12 col-md-4 mx-auto my-5 shadow card" id={result.id.value}>
+
+            <div className="row">
+              <div className="col-sm-12 text-center mt-2 p-2">
+                <img src={result.picture.large} className="profile"/>
+                <p class="mt-2 employeeName">{result.name.title} {result.name.first} {result.name.last}</p>
+                <hr></hr>
+                <p className="text-left px-2">
+                  <strong>ID </strong><span>- </span><span> {result.id.name}</span><span>- </span><span> {result.id.value}</span><br></br>
+                  e-Mail: <br></br>
+                  Phone No: <br></br>
+                  Cell No: <br></br>
+                </p>
+              </div>
             </div>
+
           </div>
-            
-                     
-           
-            {/* Location of employee info */}
-          <div className="m-2 p-1 row ">
-            <div className="col-sm-12">
-              <p class="employeeName">{result.name.first} {result.name.last} | Galactic Team: {props.galaxy}</p>
-            </div>
-          </div>      
+          ))}
         </div>
-      ))}
+      
 
     </div>
     // End of results
