@@ -24,7 +24,7 @@ function SearchResults(props) {
 
         <div className="col-sm-12" style={{color: "black"}}>
         {props.result.map(result => (
-          <div className="col-sm-12 col-md-5 mx-auto my-5 shadow card" id={result.id.value}>
+          <div className="col-sm-12 col-md-7 mx-auto my-5 shadow card" id={result.id.value}>
 
             <div className="row">
               <div className="col-sm-12 text-center mt-2">
