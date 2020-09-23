@@ -38,7 +38,7 @@ function SearchResults(props) {
 
                   <div className="row">
                       <div className="col-4 text-left">
-                      Department
+                      Intergalactic Ship
                       </div>
                       <div className="col-8 text-left">{res.id.name}</div>
                   </div>
