@@ -23,13 +23,13 @@ function SearchResults(props) {
       
 
         <div className="col-sm-12" style={{color: "black"}}>
-        {props.result.map(result => (
-          <div className="col-sm-12 col-md-7 mx-auto my-5 shadow card" id={result.id.value}>
+        {props.result.map(res => (
+          <div className="col-sm-12 col-md-7 mx-auto my-5 shadow card" id={res.id.value}>
 
             <div className="row">
               <div className="col-sm-12 text-center mt-2">
-                <img src={result.picture.large} className="profile"/>
-                <p class="mt-2 employeeName">{result.name.title} {result.name.first} {result.name.last}</p>
+                <img src={res.picture.large} className="profile"/>
+                <p class="mt-2 employeeName">{res.name.title} {res.name.first} {res.name.last}</p>
                 <hr></hr>
 
                 <div className="row details">
@@ -40,13 +40,13 @@ function SearchResults(props) {
                       <div className="col-4 text-left">
                       Department
                       </div>
-                      <div className="col-8 text-left">{result.id.name}</div>
+                      <div className="col-8 text-left">{res.id.name}</div>
                   </div>
                   <div className="row">
                       <div className="col-4 text-left">
                       ID
                       </div>
-                      <div className="col-8 text-left">{result.id.value}</div>
+                      <div className="col-8 text-left">{res.id.value}</div>
                   </div>
                   <div className="row">
                        <div className="col-4 text-left">
@@ -54,7 +54,7 @@ function SearchResults(props) {
                       </div>
                       <div className="col-8 text-left">
 
-<a href={"mailto:" + result.email}>{result.email}</a>
+<a href={"mailto:" + res.email}>{res.email}</a>
 
                       </div>
                   </div>
@@ -62,13 +62,13 @@ function SearchResults(props) {
                       <div className="col-4 text-left">
                       Phone No.
                       </div>
-                      <div className="col-8 text-left">{result.phone}</div>
+                      <div className="col-8 text-left">{res.phone}</div>
                   </div>
                   <div className="row">
                       <div className="col-4 text-left">
                       Cell No.
                       </div>
-                      <div className="col-8 text-left">{result.cell}</div>
+                      <div className="col-8 text-left">{res.cell}</div>
                   </div>
                   </div>
                 </div>
